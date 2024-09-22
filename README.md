@@ -1,5 +1,9 @@
 ## Hi there 👋
 
+![gladhee's GitHub stats](https://github-readme-stats.vercel.app/api?username=gladhee&show_icons=true&theme=radical&hide=stars,contribs&count_private=true)
+<br />
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=gladhee&layout=compact&theme=tokyonight)
+
 <!--
 **gladhee/gladhee** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
