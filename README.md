@@ -19,8 +19,46 @@
 <!-- profile-stats:start -->
 <p>
   <a href="https://github.com/gladhee?tab=overview&amp;from=2026-08-31&amp;to=2026-11-22"><img src="./assets/activity.svg" width="346" alt="GitHub Activity · 2026.08.31 – 2026.11.22 · 기여 1,446건, 활동일 56일. 7일 단위 기여 합계 217, 248, 346, 54, 4, 36, 168, 48, 96, 61, 67, 101"></a>
-  <a href="./assets/languages.svg"><img src="./assets/languages.svg" width="346" alt="Most Used Languages · 개인 소유 저장소 전체(공개·비공개, 포크·프로필 포함)와 기여한 회사 저장소의 코드 바이트 비율. 비공개 개인·회사 집계 2026.11.23. TypeScript 78.0%, JavaScript 8.4%, Python 4.1%, CSS 2.3%, PLpgSQL 1.5%, 기타 5.6%"></a>
+  <a href="./assets/languages.svg"><img src="./assets/languages.svg" width="346" alt="Most Used Languages · 개인·회사 저장소의 모든 원격 브랜치에서 본인 작성자 커밋이 추가·수정한 비어 있지 않은 소스 줄 비율. 비공개 개인·회사 집계 2026.11.23. TypeScript 85.2%, JavaScript 4.1%, Kotlin 2.5%, Java 2.0%, Python 1.2%, PLpgSQL 1.0%, CSS 1.0%, C 0.65%, Shell 0.64%, HTML 0.56%, C++ 0.40%, HCL 0.31%, SQL 0.21%, Makefile 0.06%, Dockerfile 0.06%, Objective-C 0.04%, Swift 0.04%, Astro 0.03%, Groovy 0.02%, MDX 0.02%, CMake &lt;0.01%, Jupyter Notebook &lt;0.01%, PowerShell &lt;0.01%, jq &lt;0.01%, Go Template &lt;0.01%, Lua &lt;0.01%, Ruby &lt;0.01%, Procfile &lt;0.01%"></a>
 </p>
+
+<details>
+<summary>언어별 기여 비율 전체 보기</summary>
+
+모든 원격 브랜치에서 본인 작성자 커밋이 추가·수정한 소스 줄을 집계합니다. 개인 공개 저장소는 매일 갱신하며, 비공개 개인·회사 저장소 집계일은 2026.11.23입니다.
+
+| 언어 | 비율 |
+|---|---:|
+| TypeScript | 85.2% |
+| JavaScript | 4.1% |
+| Kotlin | 2.5% |
+| Java | 2.0% |
+| Python | 1.2% |
+| PLpgSQL | 1.0% |
+| CSS | 1.0% |
+| C | 0.65% |
+| Shell | 0.64% |
+| HTML | 0.56% |
+| C++ | 0.40% |
+| HCL | 0.31% |
+| SQL | 0.21% |
+| Makefile | 0.06% |
+| Dockerfile | 0.06% |
+| Objective-C | 0.04% |
+| Swift | 0.04% |
+| Astro | 0.03% |
+| Groovy | 0.02% |
+| MDX | 0.02% |
+| CMake | &lt;0.01% |
+| Jupyter Notebook | &lt;0.01% |
+| PowerShell | &lt;0.01% |
+| jq | &lt;0.01% |
+| Go Template | &lt;0.01% |
+| Lua | &lt;0.01% |
+| Ruby | &lt;0.01% |
+| Procfile | &lt;0.01% |
+
+</details>
 <!-- profile-stats:end -->
 
 <details>

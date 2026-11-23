@@ -1,0 +1,112 @@
+{
+  "gladhee/42cursus": {
+    "cub3d/libraries/minilibx/Makefile": {
+      "blob": "2e44836e246fda717ca130ebc1b69a51ae4551da",
+      "url": "https://github.com/ael-bekk/Cub3d-Advanced-Raycasting/blob/725cb5705a419e498c40d459926475bb07117a5e/lib/Makefile"
+    },
+    "cub3d/libraries/minilibx/font.c": {
+      "blob": "656d24837f23d94c3f8a6ab3b436e4fcad9bee9c",
+      "url": "https://github.com/dannywillems/minilibx-mac-osx/blob/487318d7039cc123f1a9af81d379de590e0cf042/font.c"
+    },
+    "cub3d/libraries/minilibx/mlx.h": {
+      "blob": "e75b4afdcb2412645dfdf7ac208aecc65d877a47",
+      "url": "https://github.com/ael-bekk/Cub3d-Advanced-Raycasting/blob/725cb5705a419e498c40d459926475bb07117a5e/lib/mlx.h"
+    },
+    "cub3d/libraries/minilibx/mlx_init_loop.m": {
+      "blob": "03777714559f89bdb1c995529914f596e7e8a9d9",
+      "url": "https://github.com/ael-bekk/Cub3d-Advanced-Raycasting/blob/725cb5705a419e498c40d459926475bb07117a5e/lib/mlx_init_loop.m"
+    },
+    "cub3d/libraries/minilibx/mlx_int.h": {
+      "blob": "a93c1c98591b6eb445289fb41d607ec3ec4a861a",
+      "url": "https://github.com/ael-bekk/Cub3d-Advanced-Raycasting/blob/725cb5705a419e498c40d459926475bb07117a5e/lib/mlx_int.h"
+    },
+    "cub3d/libraries/minilibx/mlx_int_str_to_wordtab.c": {
+      "blob": "3b2ef2e92b166381ef9d20c591a1f5af1b54ffd4",
+      "url": "https://github.com/dannywillems/minilibx-mac-osx/blob/487318d7039cc123f1a9af81d379de590e0cf042/mlx_int_str_to_wordtab.c"
+    },
+    "cub3d/libraries/minilibx/mlx_mouse.m": {
+      "blob": "94ce0a9cc8f31e8b3cc2f0e24ecd3ce30ae2c71d",
+      "url": "https://github.com/ael-bekk/Cub3d-Advanced-Raycasting/blob/725cb5705a419e498c40d459926475bb07117a5e/lib/mlx_mouse.m"
+    },
+    "cub3d/libraries/minilibx/mlx_new_image.m": {
+      "blob": "46e1df15019e214f59b237806332db8b29825bd8",
+      "url": "https://github.com/ael-bekk/Cub3d-Advanced-Raycasting/blob/725cb5705a419e498c40d459926475bb07117a5e/lib/mlx_new_image.m"
+    },
+    "cub3d/libraries/minilibx/mlx_new_window.h": {
+      "blob": "d173e61fee315f57bc2e3e1866466d109bfcfa12",
+      "url": "https://github.com/ael-bekk/Cub3d-Advanced-Raycasting/blob/725cb5705a419e498c40d459926475bb07117a5e/lib/mlx_new_window.h"
+    },
+    "cub3d/libraries/minilibx/mlx_new_window.m": {
+      "blob": "6d4fea4a8446b7412d843fa5500a23df9f826cd6",
+      "url": "https://github.com/ael-bekk/Cub3d-Advanced-Raycasting/blob/725cb5705a419e498c40d459926475bb07117a5e/lib/mlx_new_window.m"
+    },
+    "cub3d/libraries/minilibx/mlx_opengl.h": {
+      "blob": "bb39267b70388e2260a08029d8d48c6b01b68911",
+      "url": "https://github.com/ael-bekk/Cub3d-Advanced-Raycasting/blob/725cb5705a419e498c40d459926475bb07117a5e/lib/mlx_opengl.h"
+    },
+    "cub3d/libraries/minilibx/mlx_opengl.m": {
+      "blob": "554d79b6be814103809841d3b49d33036b312c34",
+      "url": "https://github.com/ael-bekk/Cub3d-Advanced-Raycasting/blob/725cb5705a419e498c40d459926475bb07117a5e/lib/mlx_opengl.m"
+    },
+    "cub3d/libraries/minilibx/mlx_png.c": {
+      "blob": "ca8024d5e27cd8c7a75414696612ace3a2f15405",
+      "url": "https://github.com/ael-bekk/Cub3d-Advanced-Raycasting/blob/725cb5705a419e498c40d459926475bb07117a5e/lib/mlx_png.c"
+    },
+    "cub3d/libraries/minilibx/mlx_png.h": {
+      "blob": "83ef145aecd5be13b74741b5056fede9848ec3b8",
+      "url": "https://github.com/ael-bekk/Cub3d-Advanced-Raycasting/blob/725cb5705a419e498c40d459926475bb07117a5e/lib/mlx_png.h"
+    },
+    "cub3d/libraries/minilibx/mlx_shaders.c": {
+      "blob": "4a58955c4b4cf88e38f50a553abdcc488aca0f56",
+      "url": "https://github.com/ael-bekk/Cub3d-Advanced-Raycasting/blob/725cb5705a419e498c40d459926475bb07117a5e/lib/mlx_shaders.c"
+    },
+    "cub3d/libraries/minilibx/mlx_xpm.c": {
+      "blob": "78d8c9bdd9c1c3447c4d0b731f378d90cfb8eedc",
+      "url": "https://github.com/dannywillems/minilibx-mac-osx/blob/487318d7039cc123f1a9af81d379de590e0cf042/mlx_xpm.c"
+    },
+    "fract-ol/mlx/Makefile": {
+      "blob": "39c36f48605bba18739c5b25e51bbdb4c5a0faec",
+      "url": "https://github.com/terry-yes/mlx_example/blob/e814d4f2ced67a4a9088babda060a8cc9df003d7/mlx_beta/Makefile"
+    },
+    "fract-ol/mlx/font.c": {
+      "blob": "d4c48cc76150098c3efab0e6f05dc90e35b45f61",
+      "url": "https://github.com/miniRT-jiphyeonjeon/MiniRT/blob/df684b85b7467c2f9febf1d684e81e2cdeec0f05/lib/mlx_mms/font.c"
+    },
+    "fract-ol/mlx/interface.swift": {
+      "blob": "d4c72874af3bb9c12eb7f189e67e7e36697e0fe4",
+      "url": "https://github.com/miniRT-jiphyeonjeon/MiniRT/blob/df684b85b7467c2f9febf1d684e81e2cdeec0f05/lib/mlx_mms/interface.swift"
+    },
+    "fract-ol/mlx/mlx.h": {
+      "blob": "f24a7f701c277bf45fa5248c8a31d1eb1718bdbd",
+      "url": "https://github.com/miniRT-jiphyeonjeon/MiniRT/blob/df684b85b7467c2f9febf1d684e81e2cdeec0f05/lib/mlx_mms/mlx.h"
+    },
+    "fract-ol/mlx/mlx_image.swift": {
+      "blob": "7c1fa9b240d82a4dfe8a30f8aa18a4aa867b0fc6",
+      "url": "https://github.com/miniRT-jiphyeonjeon/MiniRT/blob/df684b85b7467c2f9febf1d684e81e2cdeec0f05/lib/mlx_mms/mlx_image.swift"
+    },
+    "fract-ol/mlx/mlx_init.swift": {
+      "blob": "d85b36ff7b80da603a123602352b52e0bd9cdd84",
+      "url": "https://github.com/miniRT-jiphyeonjeon/MiniRT/blob/df684b85b7467c2f9febf1d684e81e2cdeec0f05/lib/mlx_mms/mlx_init.swift"
+    },
+    "fract-ol/mlx/mlx_png.c": {
+      "blob": "48e82de44646038b532388a1d092f39e28db9a42",
+      "url": "https://github.com/miniRT-jiphyeonjeon/MiniRT/blob/df684b85b7467c2f9febf1d684e81e2cdeec0f05/lib/mlx_mms/mlx_png.c"
+    },
+    "fract-ol/mlx/mlx_rgb.c": {
+      "blob": "3f987174a8a21e930e23a85103b992dcdeca2aa4",
+      "url": "https://github.com/miniRT-jiphyeonjeon/MiniRT/blob/df684b85b7467c2f9febf1d684e81e2cdeec0f05/lib/mlx_mms/mlx_rgb.c"
+    },
+    "fract-ol/mlx/mlx_string_put.c": {
+      "blob": "435493cf5b03cbbb346b6e7b29c24fec7d977e05",
+      "url": "https://github.com/miniRT-jiphyeonjeon/MiniRT/blob/df684b85b7467c2f9febf1d684e81e2cdeec0f05/lib/mlx_mms/mlx_string_put.c"
+    },
+    "fract-ol/mlx/mlx_window.swift": {
+      "blob": "98b93d17036a909d01d107624a9d3a6e08d8ceee",
+      "url": "https://github.com/miniRT-jiphyeonjeon/MiniRT/blob/df684b85b7467c2f9febf1d684e81e2cdeec0f05/lib/mlx_mms/mlx_window.swift"
+    },
+    "fract-ol/mlx/mlx_xpm.c": {
+      "blob": "25fdafe87958654efa30859d35a54d7431c2e7f4",
+      "url": "https://github.com/miniRT-jiphyeonjeon/MiniRT/blob/df684b85b7467c2f9febf1d684e81e2cdeec0f05/lib/mlx_mms/mlx_xpm.c"
+    }
+  }
+}

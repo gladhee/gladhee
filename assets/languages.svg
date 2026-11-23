@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="354" height="158" viewBox="0 0 354 158" role="img">
   <title>Most Used Languages</title>
-  <desc>Most Used Languages · 개인 소유 저장소 전체(공개·비공개, 포크·프로필 포함)와 기여한 회사 저장소의 코드 바이트 비율. 비공개 개인·회사 집계 2026.11.23. TypeScript 78.0%, JavaScript 8.4%, Python 4.1%, CSS 2.3%, PLpgSQL 1.5%, 기타 5.6%</desc>
+  <desc>Most Used Languages · 개인·회사 저장소의 모든 원격 브랜치에서 본인 작성자 커밋이 추가·수정한 비어 있지 않은 소스 줄 비율. 비공개 개인·회사 집계 2026.11.23. TypeScript 85.2%, JavaScript 4.1%, Kotlin 2.5%, Java 2.0%, Python 1.2%, PLpgSQL 1.0%, CSS 1.0%, C 0.65%, Shell 0.64%, HTML 0.56%, C++ 0.40%, HCL 0.31%, SQL 0.21%, Makefile 0.06%, Dockerfile 0.06%, Objective-C 0.04%, Swift 0.04%, Astro 0.03%, Groovy 0.02%, MDX 0.02%, CMake &lt;0.01%, Jupyter Notebook &lt;0.01%, PowerShell &lt;0.01%, jq &lt;0.01%, Go Template &lt;0.01%, Lua &lt;0.01%, Ruby &lt;0.01%, Procfile &lt;0.01%</desc>
   <style>
     text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
     .title { fill: #f0f4f8; font-size: 17px; font-weight: 650; }
@@ -11,31 +11,39 @@
   </style>
   <rect x=".5" y=".5" width="353" height="157" rx="9" fill="#161c24" stroke="#37414d"/>
   <text x="16" y="26" class="title" text-anchor="start">Most Used Languages</text>
-  <defs><clipPath id="bar"><rect x="16" y="43" width="322" height="10" rx="5"/></clipPath></defs>
-  <metadata id="work-language-as-of">2026-11-23</metadata>
-  <rect clip-path="url(#bar)" x="16.000" y="43" width="251.215" height="10" fill="#3178c6"/>
-  <circle cx="19" cy="72" r="4" fill="#3178c6" stroke="#cbd5df" stroke-opacity=".32"/>
-  <text x="29" y="76" class="label" text-anchor="start">TypeScript</text>
-  <text x="164" y="76" class="percent" text-anchor="end">78.0%</text>
-  <rect clip-path="url(#bar)" x="267.215" y="43" width="27.156" height="10" fill="#f1e05a"/>
-  <circle cx="184" cy="72" r="4" fill="#f1e05a" stroke="#cbd5df" stroke-opacity=".32"/>
-  <text x="194" y="76" class="label" text-anchor="start">JavaScript</text>
-  <text x="329" y="76" class="percent" text-anchor="end">8.4%</text>
-  <rect clip-path="url(#bar)" x="294.371" y="43" width="13.132" height="10" fill="#3572A5"/>
-  <circle cx="19" cy="94" r="4" fill="#3572A5" stroke="#cbd5df" stroke-opacity=".32"/>
-  <text x="29" y="98" class="label" text-anchor="start">Python</text>
-  <text x="164" y="98" class="percent" text-anchor="end">4.1%</text>
-  <rect clip-path="url(#bar)" x="307.503" y="43" width="7.432" height="10" fill="#663399"/>
-  <circle cx="184" cy="94" r="4" fill="#663399" stroke="#cbd5df" stroke-opacity=".32"/>
-  <text x="194" y="98" class="label" text-anchor="start">CSS</text>
-  <text x="329" y="98" class="percent" text-anchor="end">2.3%</text>
-  <rect clip-path="url(#bar)" x="314.935" y="43" width="4.926" height="10" fill="#336790"/>
-  <circle cx="19" cy="116" r="4" fill="#336790" stroke="#cbd5df" stroke-opacity=".32"/>
-  <text x="29" y="120" class="label" text-anchor="start">PLpgSQL</text>
-  <text x="164" y="120" class="percent" text-anchor="end">1.5%</text>
-  <rect clip-path="url(#bar)" x="319.862" y="43" width="18.138" height="10" fill="#8192a4"/>
-  <circle cx="184" cy="116" r="4" fill="#8192a4" stroke="#cbd5df" stroke-opacity=".32"/>
-  <text x="194" y="120" class="label" text-anchor="start">기타</text>
-  <text x="329" y="120" class="percent" text-anchor="end">5.6%</text>
-  <text x="16" y="146" class="muted" text-anchor="start">개인 전체 + 기여한 회사 저장소 · 코드 바이트 기준</text>
+  <metadata id="authored-lines-as-of">2026-11-23</metadata>
+  <defs><clipPath id="bar"><rect x="16" y="41" width="322" height="9" rx="4.5"/></clipPath></defs>
+  <rect clip-path="url(#bar)" x="16.000" y="41" width="274.291" height="9" fill="#3178c6"/>
+  <circle cx="19" cy="66" r="4" fill="#3178c6" stroke="#cbd5df" stroke-opacity=".32"/>
+  <text x="29" y="70" class="label" text-anchor="start">TypeScript</text>
+  <text x="164" y="70" class="percent" text-anchor="end">85.2%</text>
+  <rect clip-path="url(#bar)" x="290.291" y="41" width="13.079" height="9" fill="#f1e05a"/>
+  <circle cx="184" cy="66" r="4" fill="#f1e05a" stroke="#cbd5df" stroke-opacity=".32"/>
+  <text x="194" y="70" class="label" text-anchor="start">JavaScript</text>
+  <text x="329" y="70" class="percent" text-anchor="end">4.1%</text>
+  <rect clip-path="url(#bar)" x="303.370" y="41" width="7.901" height="9" fill="#A97BFF"/>
+  <circle cx="19" cy="85" r="4" fill="#A97BFF" stroke="#cbd5df" stroke-opacity=".32"/>
+  <text x="29" y="89" class="label" text-anchor="start">Kotlin</text>
+  <text x="164" y="89" class="percent" text-anchor="end">2.5%</text>
+  <rect clip-path="url(#bar)" x="311.272" y="41" width="6.586" height="9" fill="#b07219"/>
+  <circle cx="184" cy="85" r="4" fill="#b07219" stroke="#cbd5df" stroke-opacity=".32"/>
+  <text x="194" y="89" class="label" text-anchor="start">Java</text>
+  <text x="329" y="89" class="percent" text-anchor="end">2.0%</text>
+  <rect clip-path="url(#bar)" x="317.857" y="41" width="3.767" height="9" fill="#3572A5"/>
+  <circle cx="19" cy="104" r="4" fill="#3572A5" stroke="#cbd5df" stroke-opacity=".32"/>
+  <text x="29" y="108" class="label" text-anchor="start">Python</text>
+  <text x="164" y="108" class="percent" text-anchor="end">1.2%</text>
+  <rect clip-path="url(#bar)" x="321.625" y="41" width="2.083" height="9" fill="#555555"/>
+  <circle cx="184" cy="104" r="4" fill="#555555" stroke="#cbd5df" stroke-opacity=".32"/>
+  <text x="194" y="108" class="label" text-anchor="start">C</text>
+  <text x="329" y="108" class="percent" text-anchor="end">0.65%</text>
+  <rect clip-path="url(#bar)" x="323.708" y="41" width="1.277" height="9" fill="#f34b7d"/>
+  <circle cx="19" cy="123" r="4" fill="#f34b7d" stroke="#cbd5df" stroke-opacity=".32"/>
+  <text x="29" y="127" class="label" text-anchor="start">C++</text>
+  <text x="164" y="127" class="percent" text-anchor="end">0.40%</text>
+  <rect clip-path="url(#bar)" x="324.984" y="41" width="13.016" height="9" fill="#8192a4"/>
+  <circle cx="184" cy="123" r="4" fill="#8192a4" stroke="#cbd5df" stroke-opacity=".32"/>
+  <text x="194" y="127" class="label" text-anchor="start">기타</text>
+  <text x="329" y="127" class="percent" text-anchor="end">4.0%</text>
+  <text x="16" y="146" class="muted" text-anchor="start">개인·회사 저장소 · 본인 커밋의 추가·수정 줄</text>
 </svg>

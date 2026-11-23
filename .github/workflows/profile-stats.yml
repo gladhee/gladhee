@@ -12,14 +12,18 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 12
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Refresh activity and combined language statistics
+      - name: Build the source language classifier
+        working-directory: scripts/langdetect
+        run: go build -mod=readonly -trimpath -o "$RUNNER_TEMP/profile-langdetect" .
+      - name: Refresh activity and authored language statistics
         env:
           GH_TOKEN: ${{ github.token }}
+          LANGDETECT_BIN: ${{ runner.temp }}/profile-langdetect
           WORK_LANGUAGE_SNAPSHOT: ${{ secrets.WORK_LANGUAGE_SNAPSHOT }}
         run: python3 scripts/profile_stats.py
       - name: Publish refreshed cards
