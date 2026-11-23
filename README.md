@@ -1,40 +1,11 @@
-<div align="center">
-<br><br><br>
+# 최희성
 
-<!-- devpla's profile -->
+기업용 AI 서비스를 만들고 운영합니다. 여행사와 요금표를 펼쳐 놓고 무엇을 자동화할지 함께 정하는 일을 좋아합니다.
 
-## Github Stats <img src="https://media.giphy.com/media/cj87CxfRtrUifF3Ryk/giphy.gif" width="25px">
-<div>
-<a href="https://github.com/gladhee/github-readme-stats">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=gladhee&layout=donut&show_icons=true&theme=material-palenight&hide_border=true&bg_color=20232a&icon_color=58A6FF&text_color=fff&title_color=58A6FF&count_private=true" width=38% />
-</a>
-<a href="https://github.com/gladhee/github-readme-stats">
-  <img src="https://github-readme-stats.vercel.app/api?username=gladhee&show_icons=true&theme=material-palenight&hide_border=true&bg_color=20232a&icon_color=58A6FF&text_color=fff&title_color=58A6FF&count_private=true" width=56% />
-</a>
-</div>
+![AI Switch 채팅은 최근 문답 5쌍과 pgvector로 찾은 유사 문답 5쌍을 현재 질문과 함께 LLM에 보냅니다.](./assets/chat-context.png)
 
-<div>
-<a href="https://github.com/gladhee/github-readme-activity-graph">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=gladhee&theme=react-dark&bg_color=20232a&hide_border=true&line=58A6FF&color=58A6FF" width=94%/>
-</a>
-</div>
+- **AI Switch** · 채팅과 관리자 콘솔을 개발했습니다. 배포와 운영은 혼자 맡아 VM 한 대에서 AWS의 Kubernetes로 확장했습니다.
+- **여행사 자동견적** · 실제 견적 요청으로 온프레미스 모델을 비교하고, 엑셀 요금표를 견적 생성에 연결했습니다.
+- **구매대행 CRM** · Slack과 파일에 흩어진 고객 기록을 한곳에 모으고 일정과 금액 처리를 자동화했습니다.
 
-<br><br><br>
-
-<!-- [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdevpla&count_bg=%23918FE0&title_bg=%23545454&icon=github.svg&icon_color=%23E7E7E7&title=Views&edge_flat=false)](https://hits.seeyoufarm.com) -->
-</div>
-
-<!--
-**gladhee/gladhee** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+[AI Switch 제품](https://aiswitch.co.kr/) · [ChatGPT 관리센터 데모 (가상 데이터)](https://kibo-compliance.illusionists1004.workers.dev/) · [Agiler 배포 PR](https://github.com/scrumpled-paper/agiler/pull/129)
