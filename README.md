@@ -1,6 +1,8 @@
 ## 최희성 · HeeSung Choi
 
-기업용 AI Switch에서 채팅과 관리자 콘솔을 개발합니다. VM 한 대에서 시작한 서비스를 AWS의 Kubernetes로 확장했습니다.
+현업에서는 TypeScript를 주로 씁니다. AI Switch의 채팅과 관리자 콘솔을 개발하고, VM 한 대에서 시작한 서비스를 AWS의 Kubernetes로 확장했습니다.
+
+**42Seoul** · 2023.09 – 2025.06 · [학습 기록](https://github.com/gladhee/42cursus)
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-263247?style=flat-square&logo=typescript&logoColor=60a5fa)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-293b4a?style=flat-square&logo=postgresql&logoColor=9ac8f0)
@@ -18,7 +20,7 @@
 <!-- profile-stats:start -->
 <p>
   <a href="https://github.com/gladhee?tab=overview&amp;from=2026-08-31&amp;to=2026-11-22"><img src="./assets/activity.svg" width="346" alt="GitHub Activity · 2026.08.31 – 2026.11.22 · 기여 1,446건, 활동일 56일. 7일 단위 기여 합계 217, 248, 346, 54, 4, 36, 168, 48, 96, 61, 67, 101"></a>
-  <a href="https://github.com/gladhee?tab=repositories"><img src="./assets/languages.svg" width="346" alt="Most Used Languages · 포크와 프로필을 제외한 개인 공개 저장소의 코드 바이트 비율. C 47.9%, Java 22.2%, C++ 12.4%, JavaScript 3.9%, HTML 3.5%, 기타 10.1%"></a>
+  <a href="./assets/languages.svg"><img src="./assets/languages.svg" width="346" alt="Most Used Languages · 개인 공개 저장소와 기여한 회사 저장소 전체의 코드 바이트 비율. 포크·프로필 저장소 제외. 회사 집계 2026.11.23. TypeScript 78.3%, JavaScript 8.5%, Python 4.1%, CSS 2.3%, PLpgSQL 1.5%, 기타 5.4%"></a>
 </p>
 <!-- profile-stats:end -->
 

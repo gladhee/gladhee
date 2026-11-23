@@ -1,10 +1,12 @@
 from collections import Counter
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from html import escape
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
+from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[1]
 WEEKS = 12
@@ -107,7 +109,7 @@ def activity_card(daily, start, end):
     return card("GitHub Activity", description, elements), description
 
 
-def language_card(totals, colors):
+def language_card(totals, colors, work_as_of=None):
     overall = sum(totals.values())
     top = sorted(totals.items(), key=lambda item: (-item[1], item[0]))[:5]
     rows = [(name, size, colors.get(name) or "#7891a6") for name, size in top]
@@ -115,8 +117,14 @@ def language_card(totals, colors):
     if remaining:
         rows.append(("기타", remaining, "#8192a4"))
     description = "Most Used Languages · 포크와 프로필을 제외한 개인 공개 저장소의 코드 바이트 비율. "
+    footer = "공개 개인 저장소 · 코드 바이트 기준"
     elements = [text(16, 26, "Most Used Languages", "title"),
                 '<defs><clipPath id="bar"><rect x="16" y="43" width="322" height="10" rx="5"/></clipPath></defs>']
+    if work_as_of is not None:
+        description = ("Most Used Languages · 개인 공개 저장소와 기여한 회사 저장소 전체의 코드 바이트 비율. "
+                       f"포크·프로필 저장소 제외. 회사 집계 {work_as_of:%Y.%m.%d}. ")
+        footer = f"개인·회사 저장소 전체 바이트 · 회사 기준 {work_as_of:%Y.%m.%d}"
+        elements.append(f'<metadata id="work-language-as-of">{work_as_of.isoformat()}</metadata>')
     if not rows:
         description += "집계할 코드가 없습니다."
         elements.append(text(16, 85, "집계할 공개 코드가 없습니다."))
@@ -131,8 +139,36 @@ def language_card(totals, colors):
             left, y = 19 + 165*col, 76 + 22*row
             elements += [f'<circle cx="{left}" cy="{y-4}" r="4" fill="{color}" stroke="#cbd5df" stroke-opacity=".32"/>',
                          text(left+10, y, name), text(left+145, y, f"{100 * size / overall:.1f}%", "percent", "end")]
-    elements.append(text(16, 146, "공개 개인 저장소 · 코드 바이트 기준", "muted"))
+    elements.append(text(16, 146, footer, "muted"))
     return card("Most Used Languages", description, elements), description
+
+
+def combined_language_card(personal_bytes, personal_colors, raw_snapshot, previous_path):
+    if not raw_snapshot:
+        # A local checkout or a missing secret must not drop the verified work contribution.
+        if previous_path.is_file():
+            previous = previous_path.read_text()
+            root = ElementTree.fromstring(previous)
+            svg_ns = "{http://www.w3.org/2000/svg}"
+            if root.find(f"{svg_ns}metadata[@id='work-language-as-of']") is not None:
+                print("Using the last verified combined language card.")
+                return previous, root.findtext(f"{svg_ns}desc")
+        return language_card(personal_bytes, personal_colors)
+
+    snapshot = json.loads(raw_snapshot)
+    as_of = date.fromisoformat(snapshot["as_of"])
+    work_bytes = snapshot["bytes"]
+    if not isinstance(work_bytes, dict) or not work_bytes or not all(
+        isinstance(name, str) and name and type(amount) is int and amount > 0
+        for name, amount in work_bytes.items()
+    ):
+        raise ValueError("Invalid work language aggregate.")
+    colors = {name: color for name, color in snapshot.get("colors", {}).items()
+              if name in work_bytes and isinstance(color, str) and re.fullmatch(r"#[0-9a-fA-F]{6}", color)}
+    colors.update({name: color for name, color in personal_colors.items() if color})
+    combined = Counter(personal_bytes)
+    combined.update(work_bytes)
+    return language_card(combined, colors, as_of)
 
 
 def main():
@@ -141,7 +177,8 @@ def main():
     start = end - timedelta(days=DAYS - 1)
     daily, totals, colors = public_data(owner, start, end)
     activity, activity_alt = activity_card(daily, start, end)
-    languages, languages_alt = language_card(totals, colors)
+    languages_path = ROOT / "assets/languages.svg"
+    languages, languages_alt = combined_language_card(totals, colors, os.environ.get("WORK_LANGUAGE_SNAPSHOT"), languages_path)
 
     readme = ROOT / "README.md"
     source = readme.read_text()
@@ -153,9 +190,9 @@ def main():
         raise ValueError("The end marker must follow the start marker")
     activity_url = f"https://github.com/{owner}?tab=overview&amp;from={start}&amp;to={end}"
     links = (f'<p>\n  <a href="{activity_url}"><img src="./assets/activity.svg" width="346" alt="{escape(activity_alt, quote=True)}"></a>\n'
-             f'  <a href="https://github.com/{owner}?tab=repositories"><img src="./assets/languages.svg" width="346" alt="{escape(languages_alt, quote=True)}"></a>\n</p>')
+             f'  <a href="./assets/languages.svg"><img src="./assets/languages.svg" width="346" alt="{escape(languages_alt, quote=True)}"></a>\n</p>')
     (ROOT / "assets/activity.svg").write_text(activity)
-    (ROOT / "assets/languages.svg").write_text(languages)
+    languages_path.write_text(languages)
     readme.write_text(before + START_MARKER + "\n" + links + "\n" + END_MARKER + after)
     print(activity_alt, languages_alt, sep="\n")
 

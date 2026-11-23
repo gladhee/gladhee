@@ -17,9 +17,10 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Read GitHub activity and public repository languages
+      - name: Refresh activity and combined language statistics
         env:
           GH_TOKEN: ${{ github.token }}
+          WORK_LANGUAGE_SNAPSHOT: ${{ secrets.WORK_LANGUAGE_SNAPSHOT }}
         run: python3 scripts/profile_stats.py
       - name: Publish refreshed cards
         run: |
