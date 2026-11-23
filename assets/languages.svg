@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="354" height="158" viewBox="0 0 354 158" role="img">
   <title>Most Used Languages</title>
-  <desc>Most Used Languages · 개인 공개 저장소와 기여한 회사 저장소 전체의 코드 바이트 비율. 포크·프로필 저장소 제외. 회사 집계 2026.11.23. TypeScript 78.3%, JavaScript 8.5%, Python 4.1%, CSS 2.3%, PLpgSQL 1.5%, 기타 5.4%</desc>
+  <desc>Most Used Languages · 개인 소유 저장소 전체(공개·비공개, 포크·프로필 포함)와 기여한 회사 저장소의 코드 바이트 비율. 비공개 개인·회사 집계 2026.11.23. TypeScript 78.0%, JavaScript 8.4%, Python 4.1%, CSS 2.3%, PLpgSQL 1.5%, 기타 5.6%</desc>
   <style>
     text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
     .title { fill: #f0f4f8; font-size: 17px; font-weight: 650; }
@@ -13,29 +13,29 @@
   <text x="16" y="26" class="title" text-anchor="start">Most Used Languages</text>
   <defs><clipPath id="bar"><rect x="16" y="43" width="322" height="10" rx="5"/></clipPath></defs>
   <metadata id="work-language-as-of">2026-11-23</metadata>
-  <rect clip-path="url(#bar)" x="16.000" y="43" width="252.004" height="10" fill="#3178c6"/>
+  <rect clip-path="url(#bar)" x="16.000" y="43" width="251.215" height="10" fill="#3178c6"/>
   <circle cx="19" cy="72" r="4" fill="#3178c6" stroke="#cbd5df" stroke-opacity=".32"/>
   <text x="29" y="76" class="label" text-anchor="start">TypeScript</text>
-  <text x="164" y="76" class="percent" text-anchor="end">78.3%</text>
-  <rect clip-path="url(#bar)" x="268.004" y="43" width="27.247" height="10" fill="#f1e05a"/>
+  <text x="164" y="76" class="percent" text-anchor="end">78.0%</text>
+  <rect clip-path="url(#bar)" x="267.215" y="43" width="27.156" height="10" fill="#f1e05a"/>
   <circle cx="184" cy="72" r="4" fill="#f1e05a" stroke="#cbd5df" stroke-opacity=".32"/>
   <text x="194" y="76" class="label" text-anchor="start">JavaScript</text>
-  <text x="329" y="76" class="percent" text-anchor="end">8.5%</text>
-  <rect clip-path="url(#bar)" x="295.250" y="43" width="13.155" height="10" fill="#3572A5"/>
+  <text x="329" y="76" class="percent" text-anchor="end">8.4%</text>
+  <rect clip-path="url(#bar)" x="294.371" y="43" width="13.132" height="10" fill="#3572A5"/>
   <circle cx="19" cy="94" r="4" fill="#3572A5" stroke="#cbd5df" stroke-opacity=".32"/>
   <text x="29" y="98" class="label" text-anchor="start">Python</text>
   <text x="164" y="98" class="percent" text-anchor="end">4.1%</text>
-  <rect clip-path="url(#bar)" x="308.406" y="43" width="7.420" height="10" fill="#663399"/>
+  <rect clip-path="url(#bar)" x="307.503" y="43" width="7.432" height="10" fill="#663399"/>
   <circle cx="184" cy="94" r="4" fill="#663399" stroke="#cbd5df" stroke-opacity=".32"/>
   <text x="194" y="98" class="label" text-anchor="start">CSS</text>
   <text x="329" y="98" class="percent" text-anchor="end">2.3%</text>
-  <rect clip-path="url(#bar)" x="315.825" y="43" width="4.944" height="10" fill="#336790"/>
+  <rect clip-path="url(#bar)" x="314.935" y="43" width="4.926" height="10" fill="#336790"/>
   <circle cx="19" cy="116" r="4" fill="#336790" stroke="#cbd5df" stroke-opacity=".32"/>
   <text x="29" y="120" class="label" text-anchor="start">PLpgSQL</text>
   <text x="164" y="120" class="percent" text-anchor="end">1.5%</text>
-  <rect clip-path="url(#bar)" x="320.769" y="43" width="17.231" height="10" fill="#8192a4"/>
+  <rect clip-path="url(#bar)" x="319.862" y="43" width="18.138" height="10" fill="#8192a4"/>
   <circle cx="184" cy="116" r="4" fill="#8192a4" stroke="#cbd5df" stroke-opacity=".32"/>
   <text x="194" y="120" class="label" text-anchor="start">기타</text>
-  <text x="329" y="120" class="percent" text-anchor="end">5.4%</text>
-  <text x="16" y="146" class="muted" text-anchor="start">개인·회사 저장소 전체 바이트 · 회사 기준 2026.11.23</text>
+  <text x="329" y="120" class="percent" text-anchor="end">5.6%</text>
+  <text x="16" y="146" class="muted" text-anchor="start">개인 전체 + 기여한 회사 저장소 · 코드 바이트 기준</text>
 </svg>

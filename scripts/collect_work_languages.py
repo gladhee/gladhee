@@ -1,4 +1,4 @@
-"""Write a dated, language-only JSON aggregate using the contributor's local GitHub CLI login."""
+"""Collect language statistics for owned repositories and verified organization contributions."""
 import argparse
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
@@ -6,11 +6,12 @@ from datetime import datetime, timedelta, timezone
 import json
 import subprocess
 import sys
+from profile_stats import repository_key
 
 INVENTORY = """
 query($org:String!, $author:ID!, $after:String) {
   organization(login:$org) {
-    repositories(first:20, isFork:false, after:$after) {
+    repositories(first:20, after:$after) {
       nodes {
         id name isEmpty
         refs(refPrefix:"refs/heads/", first:1) { totalCount }
@@ -112,8 +113,14 @@ def contributing_repositories(org, viewer):
     return {key: inventory[key]["name"] for key in inventory if key in selected}
 
 
-def aggregate(org, repos):
-    totals, colors = Counter(), {}
+def owned_repositories(login):
+    pages = api(["--paginate", "--slurp", "user/repos?affiliation=owner&visibility=all&per_page=100"])
+    return {repo["node_id"]: repo for page in pages for repo in page
+            if repo["owner"]["login"].casefold() == login.casefold()}
+
+
+def aggregate(repos, public_ids):
+    supplement, colors, public_baseline = Counter(), {}, {}
     ids = list(repos)
     for offset in range(0, len(ids), 20):
         batch = ids[offset:offset + 20]
@@ -125,14 +132,18 @@ def aggregate(org, repos):
             sizes = {edge["node"]["name"]: edge["size"] for edge in langs["edges"]}
             colors.update({edge["node"]["name"]: edge["node"]["color"] for edge in langs["edges"]})
             if sum(sizes.values()) != langs["totalSize"]:
-                sizes = api([f"repos/{org}/{repos[row['id']]}/languages"])
-            totals.update(sizes)
-    if not totals:
-        raise ValueError("No language bytes were found in repositories with verified contributions.")
+                sizes = api([f"repos/{repos[row['id']]}/languages"])
+            if row["id"] in public_ids:
+                public_baseline[repository_key(row["id"])] = sizes
+            else:
+                supplement.update(sizes)
     return {
+        "version": 2,
         "as_of": datetime.now(timezone(timedelta(hours=9))).date().isoformat(),
-        "bytes": dict(sorted(totals.items())),
+        "bytes": dict(sorted(supplement.items())),
         "colors": {key: value for key, value in sorted(colors.items()) if value},
+        "covered": sorted(repository_key(repo_id) for repo_id in repos.keys() - public_ids),
+        "public_baseline": public_baseline,
     }
 
 
@@ -144,9 +155,14 @@ def main():
     viewer = graph("query { viewer { login id } }")["viewer"]
     if viewer["login"].casefold() != args.contributor.casefold():
         raise ValueError("The active GitHub CLI account must be the requested contributor.")
-    repos = contributing_repositories(args.organization, viewer)
-    snapshot = aggregate(args.organization, repos)
-    print(f"Verified code contributions in {len(repos)} non-fork repositories.", file=sys.stderr)
+    owned = owned_repositories(viewer["login"])
+    public_ids = {key for key, repo in owned.items() if repo["visibility"] == "public"}
+    company = contributing_repositories(args.organization, viewer)
+    repos = {key: f"{args.organization}/{name}" for key, name in company.items()}
+    repos.update({key: repo["full_name"] for key, repo in owned.items()})
+    snapshot = aggregate(repos, public_ids)
+    print(f"{len(owned)} owned ({len(public_ids)} public), {len(company)} contributed company, "
+          f"{len(repos)} distinct repositories.", file=sys.stderr)
     print(json.dumps(snapshot, ensure_ascii=False, separators=(",", ":")))
 
 

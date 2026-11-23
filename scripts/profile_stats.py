@@ -1,5 +1,6 @@
 from collections import Counter
 from datetime import date, datetime, timedelta, timezone
+from hashlib import sha256
 from html import escape
 import json
 import os
@@ -20,9 +21,9 @@ query($owner: String!, $from: DateTime!, $to: DateTime!, $endCursor: String) {
     contributionsCollection(from: $from, to: $to) {
       contributionCalendar { weeks { contributionDays { date contributionCount } } }
     }
-    repositories(first: 100, after: $endCursor, ownerAffiliations: [OWNER], privacy: PUBLIC, isFork: false) {
+    repositories(first: 100, after: $endCursor, ownerAffiliations: [OWNER], privacy: PUBLIC) {
       nodes {
-        name
+        id name
         languages(first: 100, orderBy: {field: SIZE, direction: DESC}) {
           totalSize
           edges { size node { name color } }
@@ -39,6 +40,10 @@ def github(*args):
     return json.loads(subprocess.check_output(["gh", "api", *args], text=True))
 
 
+def repository_key(node_id):
+    return sha256(node_id.encode("utf-8")).hexdigest()
+
+
 def public_data(owner, start, end):
     pages = github(
         "graphql", "--paginate", "--slurp", "-f", "query=" + QUERY,
@@ -50,18 +55,16 @@ def public_data(owner, start, end):
     # A missing day is an incomplete API result, not a day with zero activity.
     daily = [by_date[(start + timedelta(days=i)).isoformat()] for i in range(DAYS)]
 
-    totals, colors = Counter(), {}
+    by_repo, colors = {}, {}
     for page in pages:
         for repo in page["data"]["user"]["repositories"]["nodes"]:
-            if repo["name"].casefold() == owner.casefold():
-                continue
             languages = repo["languages"]
             sizes = {e["node"]["name"]: e["size"] for e in languages["edges"]}
             colors.update({e["node"]["name"]: e["node"]["color"] for e in languages["edges"]})
             if sum(sizes.values()) != languages["totalSize"]:
                 sizes = github(f"repos/{owner}/{repo['name']}/languages")
-            totals.update(sizes)
-    return daily, totals, colors
+            by_repo[repository_key(repo["id"])] = sizes
+    return daily, by_repo, colors
 
 
 def text(x, y, value, style="label", anchor="start"):
@@ -109,22 +112,23 @@ def activity_card(daily, start, end):
     return card("GitHub Activity", description, elements), description
 
 
-def language_card(totals, colors, work_as_of=None):
+def language_card(totals, colors, snapshot_date=None):
     overall = sum(totals.values())
     top = sorted(totals.items(), key=lambda item: (-item[1], item[0]))[:5]
     rows = [(name, size, colors.get(name) or "#7891a6") for name, size in top]
     remaining = overall - sum(size for _, size, _ in rows)
     if remaining:
         rows.append(("기타", remaining, "#8192a4"))
-    description = "Most Used Languages · 포크와 프로필을 제외한 개인 공개 저장소의 코드 바이트 비율. "
+    description = "Most Used Languages · 포크와 프로필을 포함한 개인 공개 저장소의 코드 바이트 비율. "
     footer = "공개 개인 저장소 · 코드 바이트 기준"
     elements = [text(16, 26, "Most Used Languages", "title"),
                 '<defs><clipPath id="bar"><rect x="16" y="43" width="322" height="10" rx="5"/></clipPath></defs>']
-    if work_as_of is not None:
-        description = ("Most Used Languages · 개인 공개 저장소와 기여한 회사 저장소 전체의 코드 바이트 비율. "
-                       f"포크·프로필 저장소 제외. 회사 집계 {work_as_of:%Y.%m.%d}. ")
-        footer = f"개인·회사 저장소 전체 바이트 · 회사 기준 {work_as_of:%Y.%m.%d}"
-        elements.append(f'<metadata id="work-language-as-of">{work_as_of.isoformat()}</metadata>')
+    if snapshot_date is not None:
+        description = ("Most Used Languages · 개인 소유 저장소 전체(공개·비공개, 포크·프로필 포함)와 "
+                       "기여한 회사 저장소의 코드 바이트 비율. "
+                       f"비공개 개인·회사 집계 {snapshot_date:%Y.%m.%d}. ")
+        footer = "개인 전체 + 기여한 회사 저장소 · 코드 바이트 기준"
+        elements.append(f'<metadata id="work-language-as-of">{snapshot_date.isoformat()}</metadata>')
     if not rows:
         description += "집계할 코드가 없습니다."
         elements.append(text(16, 85, "집계할 공개 코드가 없습니다."))
@@ -143,9 +147,17 @@ def language_card(totals, colors, work_as_of=None):
     return card("Most Used Languages", description, elements), description
 
 
-def combined_language_card(personal_bytes, personal_colors, raw_snapshot, previous_path):
-    if not raw_snapshot:
-        # A local checkout or a missing secret must not drop the verified work contribution.
+def sum_languages(repositories):
+    total = Counter()
+    for sizes in repositories.values():
+        total.update(sizes)
+    return total
+
+
+def combined_language_card(public_repos, public_colors, raw_snapshot, previous_path):
+    snapshot = json.loads(raw_snapshot) if raw_snapshot else {}
+    if snapshot.get("version") != 2:
+        # Preserve the scope described by the last card until a complete census is available.
         if previous_path.is_file():
             previous = previous_path.read_text()
             root = ElementTree.fromstring(previous)
@@ -153,21 +165,28 @@ def combined_language_card(personal_bytes, personal_colors, raw_snapshot, previo
             if root.find(f"{svg_ns}metadata[@id='work-language-as-of']") is not None:
                 print("Using the last verified combined language card.")
                 return previous, root.findtext(f"{svg_ns}desc")
-        return language_card(personal_bytes, personal_colors)
+        return language_card(sum_languages(public_repos), public_colors)
 
-    snapshot = json.loads(raw_snapshot)
     as_of = date.fromisoformat(snapshot["as_of"])
-    work_bytes = snapshot["bytes"]
-    if not isinstance(work_bytes, dict) or not work_bytes or not all(
-        isinstance(name, str) and name and type(amount) is int and amount > 0
-        for name, amount in work_bytes.items()
+    supplement = snapshot["bytes"]
+    baseline = snapshot["public_baseline"]
+    covered = set(snapshot["covered"])
+    if covered.intersection(baseline) or not all(
+        isinstance(sizes, dict) and all(
+            isinstance(name, str) and name and type(amount) is int and amount > 0
+            for name, amount in sizes.items()
+        ) for sizes in [supplement, *baseline.values()]
     ):
-        raise ValueError("Invalid work language aggregate.")
+        raise ValueError("Invalid repository language snapshot.")
     colors = {name: color for name, color in snapshot.get("colors", {}).items()
-              if name in work_bytes and isinstance(color, str) and re.fullmatch(r"#[0-9a-fA-F]{6}", color)}
-    colors.update({name: color for name, color in personal_colors.items() if color})
-    combined = Counter(personal_bytes)
-    combined.update(work_bytes)
+              if isinstance(color, str) and re.fullmatch(r"#[0-9a-fA-F]{6}", color)}
+    colors.update({name: color for name, color in public_colors.items() if color})
+    # Keep the dated value for newly hidden repos. A newly public repo already in
+    # the supplement stays there until the next census to avoid counting it twice.
+    personal = dict(baseline)
+    personal.update((key, sizes) for key, sizes in public_repos.items() if key not in covered)
+    combined = sum_languages(personal)
+    combined.update(supplement)
     return language_card(combined, colors, as_of)
 
 
@@ -175,10 +194,10 @@ def main():
     owner = os.environ.get("GITHUB_REPOSITORY_OWNER", "gladhee")
     end = datetime.now(timezone(timedelta(hours=9))).date() - timedelta(days=1)
     start = end - timedelta(days=DAYS - 1)
-    daily, totals, colors = public_data(owner, start, end)
+    daily, public_repos, colors = public_data(owner, start, end)
     activity, activity_alt = activity_card(daily, start, end)
     languages_path = ROOT / "assets/languages.svg"
-    languages, languages_alt = combined_language_card(totals, colors, os.environ.get("WORK_LANGUAGE_SNAPSHOT"), languages_path)
+    languages, languages_alt = combined_language_card(public_repos, colors, os.environ.get("WORK_LANGUAGE_SNAPSHOT"), languages_path)
 
     readme = ROOT / "README.md"
     source = readme.read_text()
