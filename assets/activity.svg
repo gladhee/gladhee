@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="354" height="158" viewBox="0 0 354 158" role="img">
+  <title>GitHub Activity</title>
+  <desc>GitHub Activity · 2026.08.31 – 2026.11.22 · 기여 1,446건, 활동일 56일. 7일 단위 기여 합계 217, 248, 346, 54, 4, 36, 168, 48, 96, 61, 67, 101</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    .title { fill: #f0f4f8; font-size: 17px; font-weight: 650; }
+    .number { fill: #f0f4f8; font-size: 24px; font-weight: 650; font-variant-numeric: tabular-nums; }
+    .label { fill: #dbe1e8; font-size: 12.5px; }
+    .muted { fill: #aab7c4; font-size: 11px; }
+    .percent { fill: #c2cdd7; font-size: 12px; font-variant-numeric: tabular-nums; }
+  </style>
+  <rect x=".5" y=".5" width="353" height="157" rx="9" fill="#161c24" stroke="#37414d"/>
+  <text x="16" y="26" class="title" text-anchor="start">GitHub Activity</text>
+  <text x="338" y="25" class="muted" text-anchor="end">최근 12주</text>
+  <text x="16" y="58" class="number" text-anchor="start">1,446</text>
+  <text x="16" y="75" class="muted" text-anchor="start">공개 기여</text>
+  <text x="112" y="58" class="number" text-anchor="start">56</text>
+  <text x="112" y="75" class="muted" text-anchor="start">활동일 / 84일</text>
+  <path d="M16 127.5H338" stroke="#44515d"/>
+  <rect x="19" y="102" width="18" height="25" rx="2" fill="#35a779"><title>08.31–09.06 · 217건</title></rect>
+  <rect x="46" y="98" width="18" height="29" rx="2" fill="#35a779"><title>09.07–09.13 · 248건</title></rect>
+  <rect x="73" y="87" width="18" height="40" rx="2" fill="#64d8a2"><title>09.14–09.20 · 346건</title></rect>
+  <rect x="100" y="121" width="18" height="6" rx="2" fill="#35a779"><title>09.21–09.27 · 54건</title></rect>
+  <rect x="127" y="125" width="18" height="2" rx="2" fill="#35a779"><title>09.28–10.04 · 4건</title></rect>
+  <rect x="154" y="123" width="18" height="4" rx="2" fill="#35a779"><title>10.05–10.11 · 36건</title></rect>
+  <rect x="181" y="108" width="18" height="19" rx="2" fill="#35a779"><title>10.12–10.18 · 168건</title></rect>
+  <rect x="208" y="121" width="18" height="6" rx="2" fill="#35a779"><title>10.19–10.25 · 48건</title></rect>
+  <rect x="235" y="116" width="18" height="11" rx="2" fill="#35a779"><title>10.26–11.01 · 96건</title></rect>
+  <rect x="262" y="120" width="18" height="7" rx="2" fill="#35a779"><title>11.02–11.08 · 61건</title></rect>
+  <rect x="289" y="119" width="18" height="8" rx="2" fill="#35a779"><title>11.09–11.15 · 67건</title></rect>
+  <rect x="316" y="115" width="18" height="12" rx="2" fill="#35a779"><title>11.16–11.22 · 101건</title></rect>
+  <text x="16" y="146" class="muted" text-anchor="start">2026.08.31 – 2026.11.22</text>
+  <text x="338" y="146" class="muted" text-anchor="end">7일 단위</text>
+</svg>

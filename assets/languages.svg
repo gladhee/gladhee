@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="354" height="158" viewBox="0 0 354 158" role="img">
+  <title>Most Used Languages</title>
+  <desc>Most Used Languages · 포크와 프로필을 제외한 개인 공개 저장소의 코드 바이트 비율. C 47.9%, Java 22.2%, C++ 12.4%, JavaScript 3.9%, HTML 3.5%, 기타 10.1%</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    .title { fill: #f0f4f8; font-size: 17px; font-weight: 650; }
+    .number { fill: #f0f4f8; font-size: 24px; font-weight: 650; font-variant-numeric: tabular-nums; }
+    .label { fill: #dbe1e8; font-size: 12.5px; }
+    .muted { fill: #aab7c4; font-size: 11px; }
+    .percent { fill: #c2cdd7; font-size: 12px; font-variant-numeric: tabular-nums; }
+  </style>
+  <rect x=".5" y=".5" width="353" height="157" rx="9" fill="#161c24" stroke="#37414d"/>
+  <text x="16" y="26" class="title" text-anchor="start">Most Used Languages</text>
+  <defs><clipPath id="bar"><rect x="16" y="43" width="322" height="10" rx="5"/></clipPath></defs>
+  <rect clip-path="url(#bar)" x="16.000" y="43" width="154.374" height="10" fill="#555555"/>
+  <circle cx="19" cy="72" r="4" fill="#555555" stroke="#cbd5df" stroke-opacity=".32"/>
+  <text x="29" y="76" class="label" text-anchor="start">C</text>
+  <text x="164" y="76" class="percent" text-anchor="end">47.9%</text>
+  <rect clip-path="url(#bar)" x="170.374" y="43" width="71.375" height="10" fill="#b07219"/>
+  <circle cx="184" cy="72" r="4" fill="#b07219" stroke="#cbd5df" stroke-opacity=".32"/>
+  <text x="194" y="76" class="label" text-anchor="start">Java</text>
+  <text x="329" y="76" class="percent" text-anchor="end">22.2%</text>
+  <rect clip-path="url(#bar)" x="241.749" y="43" width="39.998" height="10" fill="#f34b7d"/>
+  <circle cx="19" cy="94" r="4" fill="#f34b7d" stroke="#cbd5df" stroke-opacity=".32"/>
+  <text x="29" y="98" class="label" text-anchor="start">C++</text>
+  <text x="164" y="98" class="percent" text-anchor="end">12.4%</text>
+  <rect clip-path="url(#bar)" x="281.747" y="43" width="12.520" height="10" fill="#f1e05a"/>
+  <circle cx="184" cy="94" r="4" fill="#f1e05a" stroke="#cbd5df" stroke-opacity=".32"/>
+  <text x="194" y="98" class="label" text-anchor="start">JavaScript</text>
+  <text x="329" y="98" class="percent" text-anchor="end">3.9%</text>
+  <rect clip-path="url(#bar)" x="294.267" y="43" width="11.223" height="10" fill="#e34c26"/>
+  <circle cx="19" cy="116" r="4" fill="#e34c26" stroke="#cbd5df" stroke-opacity=".32"/>
+  <text x="29" y="120" class="label" text-anchor="start">HTML</text>
+  <text x="164" y="120" class="percent" text-anchor="end">3.5%</text>
+  <rect clip-path="url(#bar)" x="305.490" y="43" width="32.510" height="10" fill="#8192a4"/>
+  <circle cx="184" cy="116" r="4" fill="#8192a4" stroke="#cbd5df" stroke-opacity=".32"/>
+  <text x="194" y="120" class="label" text-anchor="start">기타</text>
+  <text x="329" y="120" class="percent" text-anchor="end">10.1%</text>
+  <text x="16" y="146" class="muted" text-anchor="start">공개 개인 저장소 · 코드 바이트 기준</text>
+</svg>

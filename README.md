@@ -1,20 +1,31 @@
-<p align="center">
-  <img src="./assets/gladhee.png" width="230" alt="gladhee">
-</p>
+## 최희성 · HeeSung Choi
 
-<p align="center">
-  최희성입니다. <a href="https://aiswitch.co.kr/">AI Switch</a>에서 채팅을 개발하고, Kubernetes와 Argo CD로 서비스를 배포합니다.
-</p>
+기업용 AI Switch에서 채팅과 관리자 콘솔을 개발합니다. VM 한 대에서 시작한 서비스를 AWS의 Kubernetes로 확장했습니다.
 
-<p align="center">
-  <samp><a href="https://aiswitch.co.kr/docs/ko/introduction/admin-overview/">AI Switch 콘솔 문서</a> &nbsp;·&nbsp; <a href="https://kibo-compliance.illusionists1004.workers.dev/">ChatGPT 관리센터 데모 (가상 데이터)</a> &nbsp;·&nbsp; <a href="https://github.com/scrumpled-paper/agiler/pull/129">Agiler 배포 PR</a></samp>
+![TypeScript](https://img.shields.io/badge/TypeScript-263247?style=flat-square&logo=typescript&logoColor=60a5fa)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-293b4a?style=flat-square&logo=postgresql&logoColor=9ac8f0)
+![Docker](https://img.shields.io/badge/Docker-273b4b?style=flat-square&logo=docker&logoColor=63b8ff)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-29354b?style=flat-square&logo=kubernetes&logoColor=79a6ff)
+![Argo CD](https://img.shields.io/badge/Argo%20CD-3a302e?style=flat-square&logo=argo&logoColor=ffa883)
+![Grafana](https://img.shields.io/badge/Grafana-3c3229?style=flat-square&logo=grafana&logoColor=ffb859)
+
+### Projects
+
+- **AI Switch** · pgvector로 이전 대화를 찾는 채팅과 사용자별 권한·크레딧 관리. [제품](https://aiswitch.co.kr/) · [콘솔 문서](https://aiswitch.co.kr/docs/ko/introduction/admin-overview/)
+- **ChatGPT 관리센터** · 권한과 기간을 기준으로 기록·사용량을 조회하는 관리자 웹. [가상 데이터 데모](https://kibo-compliance.illusionists1004.workers.dev/)
+- **Agiler** · 실시간 공동 편집용 WebSocket 서버와 배포 자동화. [서버 PR](https://github.com/scrumpled-paper/agiler/pull/105) · [배포 PR](https://github.com/scrumpled-paper/agiler/pull/129)
+
+<!-- profile-stats:start -->
+<p>
+  <a href="https://github.com/gladhee?tab=overview&amp;from=2026-08-31&amp;to=2026-11-22"><img src="./assets/activity.svg" width="346" alt="GitHub Activity · 2026.08.31 – 2026.11.22 · 기여 1,446건, 활동일 56일. 7일 단위 기여 합계 217, 248, 346, 54, 4, 36, 168, 48, 96, 61, 67, 101"></a>
+  <a href="https://github.com/gladhee?tab=repositories"><img src="./assets/languages.svg" width="346" alt="Most Used Languages · 포크와 프로필을 제외한 개인 공개 저장소의 코드 바이트 비율. C 47.9%, Java 22.2%, C++ 12.4%, JavaScript 3.9%, HTML 3.5%, 기타 10.1%"></a>
 </p>
+<!-- profile-stats:end -->
 
 <details>
-<summary>프로젝트 메모</summary>
+<summary>업무 자동화 프로젝트</summary>
 
-- **AI Switch** · 최근 문답 5쌍과 pgvector로 찾은 과거 문답 5쌍을 현재 질문에 함께 담았습니다. [대화 문맥 구성도](./assets/chat-context.png)
-- **여행사 자동견적** · 같은 견적 요청으로 온프레미스 모델을 비교하고, 고객과 엑셀 요금표 자동화 범위를 정했습니다.
-- **구매대행 CRM** · Slack과 파일에 흩어진 고객 기록을 모으고 일정과 금액 처리를 자동화했습니다.
+- **여행사 자동견적** · 온프레미스에서 같은 견적 요청으로 모델을 비교하고, 고객과 요금표 자동화 범위를 정했습니다.
+- **구매대행 CRM** · 여러 파일과 Slack에 흩어진 고객 기록을 모으고 일정·금액 처리를 자동화했습니다.
 
 </details>
