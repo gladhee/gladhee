@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="354" height="158" viewBox="0 0 354 158" role="img">
   <title>GitHub Activity</title>
-  <desc>GitHub Activity · 2026.09.02 – 2026.11.24 · 기여 1,400건, 활동일 56일. 7일 단위 기여 합계 230, 333, 200, 49, 2, 135, 76, 55, 91, 75, 98, 56</desc>
+  <desc>GitHub Activity · 2026.09.03 – 2026.11.25 · 기여 1,322건, 활동일 55일. 7일 단위 기여 합계 207, 348, 166, 13, 26, 136, 68, 75, 54, 92, 98, 39</desc>
   <style>
     text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
     .title { fill: #f0f4f8; font-size: 17px; font-weight: 650; }
@@ -12,23 +12,23 @@
   <rect x=".5" y=".5" width="353" height="157" rx="9" fill="#161c24" stroke="#37414d"/>
   <text x="16" y="26" class="title" text-anchor="start">GitHub Activity</text>
   <text x="338" y="25" class="muted" text-anchor="end">최근 12주</text>
-  <text x="16" y="58" class="number" text-anchor="start">1,400</text>
+  <text x="16" y="58" class="number" text-anchor="start">1,322</text>
   <text x="16" y="75" class="muted" text-anchor="start">공개 기여</text>
-  <text x="112" y="58" class="number" text-anchor="start">56</text>
+  <text x="112" y="58" class="number" text-anchor="start">55</text>
   <text x="112" y="75" class="muted" text-anchor="start">활동일 / 84일</text>
   <path d="M16 127.5H338" stroke="#44515d"/>
-  <rect x="19" y="99" width="18" height="28" rx="2" fill="#35a779"><title>09.02–09.08 · 230건</title></rect>
-  <rect x="46" y="87" width="18" height="40" rx="2" fill="#64d8a2"><title>09.09–09.15 · 333건</title></rect>
-  <rect x="73" y="103" width="18" height="24" rx="2" fill="#35a779"><title>09.16–09.22 · 200건</title></rect>
-  <rect x="100" y="121" width="18" height="6" rx="2" fill="#35a779"><title>09.23–09.29 · 49건</title></rect>
-  <rect x="127" y="125" width="18" height="2" rx="2" fill="#35a779"><title>09.30–10.06 · 2건</title></rect>
-  <rect x="154" y="111" width="18" height="16" rx="2" fill="#35a779"><title>10.07–10.13 · 135건</title></rect>
-  <rect x="181" y="118" width="18" height="9" rx="2" fill="#35a779"><title>10.14–10.20 · 76건</title></rect>
-  <rect x="208" y="120" width="18" height="7" rx="2" fill="#35a779"><title>10.21–10.27 · 55건</title></rect>
-  <rect x="235" y="116" width="18" height="11" rx="2" fill="#35a779"><title>10.28–11.03 · 91건</title></rect>
-  <rect x="262" y="118" width="18" height="9" rx="2" fill="#35a779"><title>11.04–11.10 · 75건</title></rect>
-  <rect x="289" y="115" width="18" height="12" rx="2" fill="#35a779"><title>11.11–11.17 · 98건</title></rect>
-  <rect x="316" y="120" width="18" height="7" rx="2" fill="#35a779"><title>11.18–11.24 · 56건</title></rect>
-  <text x="16" y="146" class="muted" text-anchor="start">2026.09.02 – 2026.11.24</text>
+  <rect x="19" y="103" width="18" height="24" rx="2" fill="#35a779"><title>09.03–09.09 · 207건</title></rect>
+  <rect x="46" y="87" width="18" height="40" rx="2" fill="#64d8a2"><title>09.10–09.16 · 348건</title></rect>
+  <rect x="73" y="108" width="18" height="19" rx="2" fill="#35a779"><title>09.17–09.23 · 166건</title></rect>
+  <rect x="100" y="125" width="18" height="2" rx="2" fill="#35a779"><title>09.24–09.30 · 13건</title></rect>
+  <rect x="127" y="124" width="18" height="3" rx="2" fill="#35a779"><title>10.01–10.07 · 26건</title></rect>
+  <rect x="154" y="111" width="18" height="16" rx="2" fill="#35a779"><title>10.08–10.14 · 136건</title></rect>
+  <rect x="181" y="119" width="18" height="8" rx="2" fill="#35a779"><title>10.15–10.21 · 68건</title></rect>
+  <rect x="208" y="118" width="18" height="9" rx="2" fill="#35a779"><title>10.22–10.28 · 75건</title></rect>
+  <rect x="235" y="121" width="18" height="6" rx="2" fill="#35a779"><title>10.29–11.04 · 54건</title></rect>
+  <rect x="262" y="116" width="18" height="11" rx="2" fill="#35a779"><title>11.05–11.11 · 92건</title></rect>
+  <rect x="289" y="116" width="18" height="11" rx="2" fill="#35a779"><title>11.12–11.18 · 98건</title></rect>
+  <rect x="316" y="123" width="18" height="4" rx="2" fill="#35a779"><title>11.19–11.25 · 39건</title></rect>
+  <text x="16" y="146" class="muted" text-anchor="start">2026.09.03 – 2026.11.25</text>
   <text x="338" y="146" class="muted" text-anchor="end">7일 단위</text>
 </svg>
