@@ -18,7 +18,7 @@
 
 <!-- profile-stats:start -->
 <p>
-  <a href="https://github.com/gladhee?tab=overview&amp;from=2026-09-04&amp;to=2026-11-26"><img src="./assets/activity.svg" width="346" alt="GitHub Activity · 2026.09.04 – 2026.11.26 · 기여 1,259건, 활동일 54일. 7일 단위 기여 합계 168, 341, 158, 4, 36, 140, 69, 84, 48, 78, 122, 11"></a>
+  <a href="https://github.com/gladhee?tab=overview&amp;from=2026-09-05&amp;to=2026-11-27"><img src="./assets/activity.svg" width="346" alt="GitHub Activity · 2026.09.05 – 2026.11.27 · 기여 1,250건, 활동일 54일. 7일 단위 기여 합계 154, 405, 89, 4, 36, 165, 48, 99, 60, 65, 104, 21"></a>
   <a href="./assets/languages.svg"><img src="./assets/languages.svg" width="346" alt="Most Used Languages · 개인·회사 저장소의 모든 원격 브랜치에서 본인 작성자 커밋이 추가·수정한 비어 있지 않은 소스 줄 비율. 비공개 개인·회사 집계 2026.11.23. TypeScript 85.2%, JavaScript 4.1%, Kotlin 2.5%, Java 2.0%, Python 1.2%, PLpgSQL 1.0%, CSS 1.0%, C 0.65%, Shell 0.64%, HTML 0.56%, C++ 0.40%, HCL 0.31%, SQL 0.21%, Makefile 0.06%, Dockerfile 0.06%, Objective-C 0.04%, Swift 0.04%, Astro 0.03%, Groovy 0.02%, MDX 0.02%, CMake &lt;0.01%, Jupyter Notebook &lt;0.01%, PowerShell &lt;0.01%, jq &lt;0.01%, Go Template &lt;0.01%, Lua &lt;0.01%, Ruby &lt;0.01%, Procfile &lt;0.01%"></a>
 </p>
 
